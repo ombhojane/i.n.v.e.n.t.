@@ -30,18 +30,12 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
-os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
-os.environ["LANGCHAIN_API_KEY"] = "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"
-os.environ["LANGCHAIN_PROJECT"] = "ideagen"
-
-
 # Configure static files and templates
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 # Use environment variables for sensitive information
-MONGODB_URI = "mongodb+srv://aminvasudev6:wcw9QsKgW3rUeGA4@waybillcluster.88jnvsg.mongodb.net/?retryWrites=true&w=majority&appName=waybillCluster"
+MONGODB_URI = os.getenv("MongoDBURI")
 
 # Initialize MongoDB client
 client = MongoClient(MONGODB_URI)
@@ -49,7 +43,7 @@ db = client["idea_generator"]
 ideas_collection = db["ideas"]
 reserved_ideas_collection = db["reserved_ideas"]
 
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro", temperature=0.9, google_api_key="AIzaSyAYadY3_MQI0_RZU7_1ckpo4k2Vm13BIgU")
+llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro", temperature=0.9, google_api_key=os.getenv("APIKEY"))
 
 def generate_ideas(prompt):
     prompt_template = PromptTemplate(
