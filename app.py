@@ -196,9 +196,9 @@ def projects(request: Request):
 def resume():
     return FileResponse("static/assets/Resume.pdf")
 
-@app.get("/ideagen")
-def ideagen(request: Request):
-    return templates.TemplateResponse("ideagen.html", {"request": request})
+@app.get("/invent")
+def invent(request: Request):
+    return templates.TemplateResponse("invent.html", {"request": request})
 
 @app.post("/generate_ideas")
 def generate_ideas_route(idea_request: IdeaRequest):

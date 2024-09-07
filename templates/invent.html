@@ -347,17 +347,17 @@
  </head>
  <body>
     <nav id="desktop-nav">
-        <div class="logo">Ideagen</div>
+        <div class="logo">i.n.v.e.n.t.</div>
         <div>
           <ul class="nav-links">
             <li><a href="/">About</a></li>
             <li><a href="/ideas">Ideas</a></li>
-            <li><a href="/ideagen" style="border: 2px solid #333; border-radius: 50px; padding: 10px 20px;">Try Here!</a></li>
+            <li><a href="/invent" style="border: 2px solid #333; border-radius: 50px; padding: 10px 20px;">Try Here!</a></li>
           </ul>
         </div>
       </nav>
       <nav id="hamburger-nav">
-        <div class="logo">Ideagen</div>
+        <div class="logo">i.n.v.e.n.t.</div>
         <div class="hamburger-menu">
           <div class="hamburger-icon" onclick="toggleMenu()">
             <span></span>
@@ -367,7 +367,7 @@
           <div class="menu-links">
             <li><a href="/">About</a></li>
             <li><a href="/ideas">Ideas</a></li>
-            <li><a href="/ideagen" style="border: 2px solid #333; border-radius: 50px; padding: 10px 20px;">Try Here!</a></li>
+            <li><a href="/invent" style="border: 2px solid #333; border-radius: 50px; padding: 10px 20px;">Try Here!</a></li>
           </div>
         </div>
       </nav>
@@ -472,7 +472,7 @@
 
     </section>
     <footer>
-      <p>Copyright &#169; 2023 Om Bhojane.</p>
+      <p>Copyright &#169; 2024 Om Bhojane.</p>
     </footer>
     <script src="/static/js/script.js"></script>
 
@@ -622,21 +622,21 @@ document.addEventListener('DOMContentLoaded', () => {
 generateMoreButton.addEventListener('click', generateIdeas);
 
 function shareOnTwitter(idea) {
-    const text = encodeURIComponent(`I found this amazing project idea on IdeaGen: ${idea.title}. Check it out!`);
-    const url = encodeURIComponent('https://omsdev.vercel.app/ideagen');
+    const text = encodeURIComponent(`I found this amazing project idea on i.n.v.e.n.t.: ${idea.title}. Check it out!`);
+    const url = encodeURIComponent('https://omsdev.vercel.app/i.n.v.e.n.t.');
     window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
 }
 
 function shareOnWhatsApp(idea) {
-    const text = encodeURIComponent(`Check out this amazing project idea I found on IdeaGen: ${idea.title}`);
-    const url = encodeURIComponent('https://omsdev.vercel.app/ideagen');
+    const text = encodeURIComponent(`Check out this amazing project idea I found on i.n.v.e.n.t.: ${idea.title}`);
+    const url = encodeURIComponent('https://omsdev.vercel.app/invent');
     window.open(`https://wa.me/?text=${text}%20${url}`, '_blank');
 }
 
 function shareOnLinkedIn(idea) {
-    const url = encodeURIComponent('https://omsdev.vercel.app/ideagen');
+    const url = encodeURIComponent('https://omsdev.vercel.app/invent');
     const title = encodeURIComponent(idea.title);
-    const summary = encodeURIComponent(`Check out this amazing project idea I found on IdeaGen: ${idea.title}`);
+    const summary = encodeURIComponent(`Check out this amazing project idea I found on i.n.v.e.n.t.: ${idea.title}`);
     window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${summary}`, '_blank');
 }
 
